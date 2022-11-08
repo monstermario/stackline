@@ -1,0 +1,49 @@
+.productTable {
+  overflow-x: auto;
+  width: 100%;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+      padding: 12px 30px;
+      text-align: right;
+      &:first-child {
+        text-align: left;
+        width: 150px;
+      }
+    }
+    td {
+      color: #999;
+      font-size: 12px;
+    }
+    th {
+      padding: 20px 30px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+      &::before {
+        content: '';
+        position: absolute;
+        right: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+      }
+      &.active::before {
+        content: '\2038';
+        transform: translateY(-45%);
+      }
+      &.activeDesc::before {
+        content: '\2038';
+        transform: translateY(25%) rotate(-180deg);
+      }
+    }
+    tr {
+      border-top: 1px solid #0000001f;
+    }
+  }
+}
